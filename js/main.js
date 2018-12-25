@@ -2,7 +2,6 @@ $(document).ready(function(){
     var myFullpage = new fullpage('#fullpage', {
         navigation: true,
         navigationPosition: 'right',
-        //navigationTooltips: ['First page', 'Second page', 'Third and last page'],
         showActiveTooltip: true,
         menu: '#menu'
     });
@@ -18,89 +17,14 @@ $(document).ready(function(){
         return false;
     });
     $(document).on('click', function(e) {
-        if (!$(e.target).closest("header .main_menu.open").length) {
+        //if (!$(e.target).closest("header .main_menu.open").length) {
             $("header .main_menu.open").removeClass('open');
             $("html").removeClass('page-noscroll');
-        }
+       // }
         e.stopPropagation();
     });
 
-
-
-    /*
-
-
-
-    $('#show_more').on('click', function(){
-        if($('#more').is(':visible')){
-            $('#more').slideUp();
-        }else{
-            $('#more').slideDown();
-        }
-    });
-
-
-
-    $(window).resize(function(){
-        var header_height = $('header').outerHeight();
-        $('.section_content').css({'margin-top': header_height+'px'});
-        $(window).scroll(function(){
-            if ($(this).scrollTop() > header_height+100) {
-                $('header').addClass('fixed');
-            } else {
-                $('header').removeClass('fixed');
-            }
-        });
-
-    });
-    $(window).resize();
-
-
-
-    if($('.product_slider > div').length >1){
-        $('.product_slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            //fade: true,
-            asNavFor: '.product_slider_nav'
-        });
-    }
-
-
-    $('.product_slider_nav').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: '.product_slider',
-        dots: false,
-        arrows: false,
-        focusOnSelect: true,
-        responsive: [
-
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
-            {
-                breakpoint: 575,
-                settings: {
-                    slidesToShow: 3,
-                }
-            }
-        ]
-    });
-
-
-    */
-
+    new WOW().init();
 
 });
 
